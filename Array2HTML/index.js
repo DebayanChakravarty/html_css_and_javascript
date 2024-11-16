@@ -19,7 +19,7 @@ https://debayanchakravarty.in/JavaScript_Array_Methods_and_Features/
 
 function getTheSize(arrSize){
 
-    sizeDisplay.innerHTML = "<td>Size in Kb = </td>"
+    sizeDisplay.innerHTML = "<td>Size in Bytes = </td>"
     //1 number = 8 byte;
 
     let totalSizeinBytes = arrSize.length * 8;
@@ -27,10 +27,10 @@ function getTheSize(arrSize){
     //let totalSizeinBytes = len * 8;
 
     //convert byte -> KB
-    let totalSizeinKB = totalSizeinBytes / 1024;
+    //let totalSizeinKB = totalSizeinBytes / 1024;
 
     const sizeTd = document.createElement('td');
-    sizeTd.textContent = totalSizeinKB;
+    sizeTd.textContent = totalSizeinBytes;
     sizeDisplay.appendChild(sizeTd);
 }
 
