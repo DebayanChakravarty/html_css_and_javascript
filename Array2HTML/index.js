@@ -80,9 +80,16 @@ function getTheLength(arrLen){
 
 
     function validateIt(val){
+       if(val === ""){
+        errorDisplay.textContent = "Enter valid Input!!";
+        errorDisplay.style.color= "red";
+       }else{
+        errorDisplay.textContent = ""
+
+
         let num = Number(val)
 
-        if(isNaN(num)){
+        if(isNaN(num) && val === ""){
             errorDisplay.textContent = "Enter valid Input!!"
             errorDisplay.style.color= "red";
         }   
@@ -90,6 +97,10 @@ function getTheLength(arrLen){
             errorDisplay.textContent = ""
             pushIt(num);
         }
+
+       }
+
+       
 
     }
 
