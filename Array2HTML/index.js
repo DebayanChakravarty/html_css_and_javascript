@@ -24,11 +24,6 @@ function getTheSize(arrSize){
 
     let totalSizeinBytes = arrSize.length * 8;
 
-    //let totalSizeinBytes = len * 8;
-
-    //convert byte -> KB
-    //let totalSizeinKB = totalSizeinBytes / 1024;
-
     const sizeTd = document.createElement('td');
     sizeTd.textContent = totalSizeinBytes;
     sizeDisplay.appendChild(sizeTd);
@@ -74,39 +69,37 @@ function getTheLength(arrLen){
 
     function pushIt(val){
         array.push(val);
-        inPut.value = "";
+      
         loopIt(array);
     }
 
 
-    function validateIt(val){
-       if(val === ""){
-        errorDisplay.textContent = "Enter valid Input!!";
-        errorDisplay.style.color= "red";
-       }else{
-        errorDisplay.textContent = ""
+    function isValidInput(input) {
+        // Remove leading and trailing whitespace
+        let trimmedInput = input.trim();
 
-
-        let num = Number(val)
-
-        if(isNaN(num) && val === ""){
+        // Check if the input is empty after trimming
+        if (trimmedInput.length === 0) {
             errorDisplay.textContent = "Enter valid Input!!"
             errorDisplay.style.color= "red";
-        }   
+        }
         else{
-            errorDisplay.textContent = ""
-            pushIt(num);
+            inPut.value = "";
+            errorDisplay.textContent = "";
+            pushIt(trimmedInput);
         }
 
-       }
-
+     
+        
        
-
     }
+
+
+    
 
     const array = [];
     btn.addEventListener('click',function(){
-        validateIt(inPut.value);
+        isValidInput(inPut.value);
     })
 })
 
