@@ -69,7 +69,6 @@ function getTheLength(arrLen){
 
     function pushIt(val){
         array.push(val);
-      
         loopIt(array);
     }
 
